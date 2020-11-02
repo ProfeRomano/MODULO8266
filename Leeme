@@ -1,0 +1,18 @@
+Conexiones con el modulo:
+Tener en cuenta que cuando lo conectamos a Arduino UNO la fuente 3,3 volts del USB serial no tiene la sufinciente corriente para trabajar con el modulo WIFI
+Es necesario conectar arduino a una alimentacion externa 12volt 500mA puede funcionar correctamente.
+conectar 3v3 de arduino al positivo del mudulo (pata 8)
+conectar GND de Arduino al negativo del modulo (pata 1)
+conectar RX de Arduino (pata 0) a RX del modulo (pata 4) no requiere resistencias reductoras
+conectar TX de Arduino (pata 1) a TX del modulo (pata 5)
+conectar GPI0 a GND para Flashear luego retirar (tiene pull up interno)
+conectar GPI2 (pata 2 del modulo) a 3v3 atravez de una resistencia de 1K (este punto se utilizara para iniciar la carga del modulo tirando a tierra brevemente el pin)
+conectar atraves de un pulsador NA la (pata 6) del modulo a 3v3 (este pin se utilizara para que el modulo se ponga en modo Flash)
+
+1) iniciar programa ESP8266Flasher.exe
+2) configurar 115200 baudios y 512 la memoria
+3) configuar el puerto (segun donde este conectado Arduino)
+4) Accionar pulasor de pata 7 del modulo (solo un click) tirando a tierra RST
+5) dar comenzar flash al programa
+6) si no comienza a cargar el firmware poner a tierra breve GPI2 he iniciará la carga
+7) luego de la carga desconectar GPI0
